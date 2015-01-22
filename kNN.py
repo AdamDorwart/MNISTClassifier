@@ -53,10 +53,9 @@ y = y[:,0]
 ty = ty[:,0]
 classif = KNeighborsClassifier(n_neighbors=10,weights='distance')
 classif.fit(X,y)
-print classif.predict(drawnDigit)
+print "Prediction: " + str(classif.predict(drawnDigit))
 wrong = 0;
 for i in range(0,len(ty)-1):
    if classif.predict(tX[i]) != ty[i]:
       wrong = wrong + 1
-print "Test error: " + str((float(wrong)/(len(ty)-1)*100) + "%"
-
+print "Test error: " + str((float(wrong)/(len(ty)-1)*100)) + "%"
